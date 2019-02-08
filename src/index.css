@@ -97,17 +97,25 @@ header h2 {
 }
 
 .closeModal {
-  background-color: red;
   position: absolute;
-  opacity: 0.5;
+  opacity: 0.8;
+  height: 30px;
+  border-radius: 50%;
+  width: 30px;
   padding: 3px;
-  border-radius: 5px;
   right: 5px;
   top: 5px;
   color: white;
 }
 
-.closeModal @media screen and (min-width: 500px) {
+.closeModal:hover {
+  background-color: white;
+  opacity: 0.8;
+  cursor: pointer;
+  box-shadow: 1px grey;
+}
+
+@media screen and (min-width: 500px) {
   .gallery ul li {
     width: 45%;
   }

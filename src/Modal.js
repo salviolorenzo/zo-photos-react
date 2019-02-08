@@ -7,9 +7,11 @@ export default function Modal(props) {
         className="modalImg"
         style={props.createBgImg(props.selectedImg.url)}
       >
-        <div className="closeModal" onClick={props.modalClose}>
-          X
-        </div>
+        <div
+          style={props.closeButtonImg(require('./images/icons8-cancel.svg'))}
+          className="closeModal"
+          onClick={props.modalClose}
+        />
       </div>
       <div className="modalCaption">
         <p>{props.selectedImg.caption}</p>

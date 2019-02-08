@@ -175,6 +175,7 @@ export default class Gallery extends Component {
           modalOpen={this.state.modalOpen}
           selectedImg={this.state.selectedImg}
           modalClose={this.modalClose.bind(this)}
+          closeButtonImg={this.createBgImg.bind(this)}
         />
         <ul>
           {this.state.images.map(image => {
