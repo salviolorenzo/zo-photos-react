@@ -12,7 +12,6 @@ export default class Gallery extends Component {
         `./images/france_5.png`,
         `./images/france_6.png`,
         `./images/france_7.png`,
-        `./images/france_8.png`,
         `./images/france_9.png`,
         `./images/dec2_1.jpg`,
         `./images/dec2_2.jpg`,
