@@ -72,7 +72,42 @@ header h2 {
   min-height: 200px;
 }
 
-@media screen and (min-width: 500px) {
+.Modal {
+  height: 80%;
+  width: 80%;
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  background-color: #f4f4f4;
+  top: 10%;
+  left: 10%;
+}
+
+.Modal p {
+  margin: 5px;
+}
+
+.modalImg {
+  width: 100%;
+  height: 100%;
+}
+
+.modalOpen {
+  display: flex !important;
+}
+
+.closeModal {
+  background-color: red;
+  position: absolute;
+  opacity: 0.5;
+  padding: 3px;
+  border-radius: 5px;
+  right: 5px;
+  top: 5px;
+  color: white;
+}
+
+.closeModal @media screen and (min-width: 500px) {
   .gallery ul li {
     width: 45%;
   }
