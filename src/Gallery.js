@@ -124,7 +124,8 @@ export default class Gallery extends Component {
       selectedImg: {
         url: ``,
         caption: ``,
-        info: ``
+        info: ``,
+        index: ``
       },
       modalOpen: false
     };
@@ -148,16 +149,24 @@ export default class Gallery extends Component {
     return style;
   }
 
-  handleImageClick(url, caption, info) {
-    console.log(url, caption, info);
+  handleImageClick(url, caption, info, index) {
+    console.log(url, caption, info, index);
     this.setState({
       selectedImg: {
         url: url,
         caption: caption,
-        info: info
+        info: info,
+        index: index
       },
       modalOpen: true
     });
+  }
+
+  handleImageNav(event) {
+    if (this.state.modalOpen) {
+      // left == 37 // right == 39
+      console.log(event.keyCode);
+    }
   }
 
   modalClose() {
@@ -169,7 +178,7 @@ export default class Gallery extends Component {
 
   render() {
     return (
-      <div className="gallery">
+      <div className="gallery" onKeyPress={event => this.handleImageNav(event)}>
         <Modal
           createBgImg={this.createBgImg.bind(this)}
           modalOpen={this.state.modalOpen}
@@ -185,11 +194,12 @@ export default class Gallery extends Component {
                   <div
                     className="galleryImg"
                     style={this.createBgImg(`${image.url}`)}
-                    onClick={(url, caption, info) => {
+                    onClick={(url, caption, info, index) => {
                       this.handleImageClick(
                         image.url,
                         image.caption,
-                        image.info
+                        image.info,
+                        this.state.images.indexOf(image)
                       );
                     }}
                   />

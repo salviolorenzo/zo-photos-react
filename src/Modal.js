@@ -12,6 +12,7 @@ export default function Modal(props) {
           className="closeModal"
           onClick={props.modalClose}
         />
+        <div className="arrows" />
       </div>
       <div className="modalCaption">
         <p>{props.selectedImg.caption}</p>
